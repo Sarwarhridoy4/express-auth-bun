@@ -6,9 +6,17 @@
   "description": "An Express.js authentication boilerplate using Bun runtime.",
   "private": true,
   "scripts": {
-    "start": "bun run dist/server.js" ,
     "dev": "bun --watch src/server.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "bun run dist/server.js",
+    "prisma:generate": "npx prisma generate",
+    "prisma:studio": "npx prisma studio",
+    "prisma:format": "npx prisma format",
+    "prisma:migrate": "npx prisma migrate dev --name init",
+    "prisma:deploy": "npx prisma migrate deploy",
+    "prisma:push": "npx prisma db push",
+    "prisma:reset": "npx prisma migrate reset",
+    "prisma:seed": "npx prisma db seed"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -22,9 +30,11 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@prisma/client": "^6.19.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "helmet": "^8.1.0"
+    "helmet": "^8.1.0",
+    "prisma": "^6.19.0"
   }
 }
