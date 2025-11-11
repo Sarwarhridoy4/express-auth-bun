@@ -1,7 +1,7 @@
 import type { Server } from "http";
 import http from "http";
 import app from "./app.js";
-import { NODE_ENV, PORT } from "./config/index.js";
+import { NODE_ENV, PORT } from "./config/env.js";
 import { prisma } from "./config/db.js";
 
 let server: Server | null = null;
